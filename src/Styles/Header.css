@@ -1,0 +1,103 @@
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fafaf8;
+  border-bottom: 1px solid #e5e2da;
+}
+
+.header-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+/* ===== NAV ESCRITORIO ===== */
+.header-nav-desktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav-desktop a {
+  font-size: 0.95rem;
+  color: #9b9898;
+  text-decoration: none;
+}
+
+.header-nav-desktop a:hover {
+  color: #1a1a1a;
+}
+
+/* ===== BOTÓN HAMBURGUESA (oculto en escritorio) ===== */
+.header-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-toggle span {
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+  transition: 0.25s ease;
+}
+
+/* Anima las 3 líneas a una "X" cuando el menú está abierto */
+.header-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header-toggle.is-open span:nth-child(2) { opacity: 0; }
+.header-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== NAV MÓVIL (oculto por defecto) ===== */
+.header-nav-mobile {
+  display: none;
+}
+
+/* ===== MÓVIL: pantallas de 640px o menos ===== */
+@media (max-width: 640px) {
+  .header-nav-desktop {
+    display: none;
+  }
+
+  .header-toggle {
+    display: flex;
+  }
+
+  .header-nav-mobile {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    background: #fafaf8;
+    transition: max-height 0.3s ease;
+  }
+
+  .header-nav-mobile.is-open {
+    max-height: 300px;
+    border-top: 1px solid #e5e2da;
+  }
+
+  .header-nav-mobile a {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+  }
+}

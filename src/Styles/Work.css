@@ -1,0 +1,139 @@
+.work {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  margin-bottom: 5rem;
+}
+
+/* ===== TARJETA DESTACADA ===== */
+.work-featured {
+  background: #4a4a4a;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.work-featured-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.work-eyebrow {
+  color: #ddd;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.work-featured h2 {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0.75rem 0 1rem;
+}
+
+.work-featured p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.work-btn {
+  display: inline-block;
+  background: #fff;
+  color: #333;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* ===== GRID DE PROYECTOS ===== */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.work-card-image {
+  background: #f2f2f2;
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1rem;
+}
+
+.work-card-image {
+  background: #eeeeec;
+  color: #c4c2ba; /* color del ícono */
+  border-radius: 8px;
+  aspect-ratio: 4 / 3;
+  margin: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card h3 {
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  margin: 1rem;
+}
+
+.work-card {
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.work-card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Tablet: 2 columnas en vez de 3 */
+@media (max-width: 1024px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .work-card:hover {
+    transform: scale(1.08);
+  }
+}
+
+/* En móvil, las tarjetas se apilan en una sola columna */
+@media (max-width: 640px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-featured {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .work-featured h2 {
+    font-size: 1.5rem;
+  }
+
+  .work-card:hover {
+    transform: scale(1.08);
+  }
+}
+
+/* En móvil, las tarjetas se apilan en una sola columna */
+@media (max-width: 640px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-featured {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .work-featured h2 {
+    font-size: 1.5rem;
+  }
+  .work-card:hover {
+  transform: scale(1.08);
+}
+}

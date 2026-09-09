@@ -1,50 +1,108 @@
 .work {
-  max-width: 1600px;
-  margin: 0 auto;
+  --dark: #2b2e3a;
+  --orange: #ec6f2d;
+  --yellow: #f4c542;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
   padding: 3rem 1.5rem;
-  margin-bottom: 5rem;
 }
 
-/* ===== TARJETA DESTACADA ===== */
+/* ===== HERO / PROYECTO DESTACADO ===== */
 .work-featured {
-  background: #4a4a4a;
-  border-radius: 12px;
-  padding: 4rem 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 5rem;
 }
 
-.work-featured-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
+.work-featured-content { max-width: 500px; }
 
 .work-eyebrow {
-  color: #ddd;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #d97a3f;
+  font: 700 0.85rem/1 inherit;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.work-featured h2 {
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 0.75rem 0 1rem;
+.work-featured h1 {
+  color: var(--dark);
+  font: 800 2.75rem/1.15 inherit;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin: 0.5rem 0 1.25rem;
 }
 
 .work-featured p {
-  color: #ccc;
-  margin-bottom: 1.5rem;
+  color: #6b6b6b;
+  line-height: 1.2;
+  margin-bottom: 1.75rem;
 }
 
 .work-btn {
-  display: inline-block;
-  background: #fff;
-  color: #333;
-  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--yellow);
+  color: var(--dark);
+  padding: 0.85rem 1.75rem;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(244, 197, 66, 0.4);
+}
+
+.work-btn:hover .work-btn-arrow { transform: translateX(3px); }
+.work-btn-arrow { transition: transform 0.2s ease; }
+
+/* ===== ILUSTRACIÓN DEL HERO ===== */
+.work-hero-illustration {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 340px;
+}
+
+.work-hero-illustration img,
+.work-hero-placeholder {
+  position: relative;
+  z-index: 2;
+}
+
+.work-hero-illustration img { max-width: 500px; width: 100%; }
+
+.work-hero-placeholder {
+  width: 260px;
+  height: 260px;
+  border-radius: 16px;
+  background: #eeeeec;
+  color: #c4c2ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.work-hero-podium {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 60px;
+  background: #f4f2ec;
+  border-radius: 12px;
 }
 
 /* ===== GRID DE PROYECTOS ===== */
@@ -55,15 +113,7 @@
 }
 
 .work-card-image {
-  background: #f2f2f2;
-  border-radius: 8px;
-  aspect-ratio: 4 / 3;
-  margin-bottom: 1rem;
-}
-
-.work-card-image {
   background: #eeeeec;
-  color: #c4c2ba; /* color del ícono */
   border-radius: 8px;
   aspect-ratio: 4 / 3;
   margin: 1rem;
@@ -73,10 +123,21 @@
   justify-content: center;
 }
 
+.work-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.25rem 0.5rem;
+}
+
 .work-card h3 {
   font-size: 1.05rem;
   color: #1a1a1a;
   margin: 1rem;
+}
+
+.work-card-arrow {
+  color: var(--dark);
 }
 
 .work-card {
@@ -86,54 +147,32 @@
   transition: transform 0.25s ease;
 }
 
+a.work-card,
+a.work-card:link,
+a.work-card:visited,
+a.work-card:hover,
+a.work-card:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .work-card:hover {
   transform: scale(1.2);
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Tablet: 2 columnas en vez de 3 */
+/* RESPONSIVE */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-    .work-card:hover {
-    transform: scale(1.08);
-  }
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .work-card:hover { transform: scale(1.08); }
 }
 
-/* En móvil, las tarjetas se apilan en una sola columna */
+/* Móvil */
 @media (max-width: 640px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .work-featured {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .work-featured h2 {
-    font-size: 1.5rem;
-  }
-
-  .work-card:hover {
-    transform: scale(1.08);
-  }
-}
-
-/* En móvil, las tarjetas se apilan en una sola columna */
-@media (max-width: 640px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .work-featured {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .work-featured h2 {
-    font-size: 1.5rem;
-  }
-  .work-card:hover {
-  transform: scale(1.08);
-}
+  .work-grid { grid-template-columns: 1fr; }
+  .work-featured { padding: 2.5rem 1.5rem; }
+  .work-featured h1 { font-size: 1.5rem; }
+  .work-card:hover { transform: scale(1.08); }
 }

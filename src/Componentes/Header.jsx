@@ -4,7 +4,7 @@ import '../Styles/Header.css';
 // Lista de los links de navegación,
 const NAV_LINKS = ['Proyectos', 'Sobre mí', 'Servicios', 'Contacto'];
 
-export default function Header() {
+export default function Header({ active = null }) {
   // false = cerrado (por defecto), true = desplegado.
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,13 +13,17 @@ export default function Header() {
 
       {/* Contenedor interno que centra el contenido y le da el padding lateral */}
       <div className="header-inner">
-        <a href="/" className="header-logo">Eliza Muñoz</a>
+        <a href="/" className="header-logo">Eliza Muñoz ★</a>
 
         {/* NAV DE ESCRITORIO
             Recorre NAV_LINKS y genera un <a> por cada elemento. */}
         <nav className="header-nav-desktop">
           {NAV_LINKS.map((link) => (
-            <a key={link} href={`#${link.toLowerCase()}`}>
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              className={link === active ? 'is-active' : ''}
+            >
               {link}
             </a>
           ))}

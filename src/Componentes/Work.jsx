@@ -1,92 +1,66 @@
 import "../Styles/Work.css";
+import cerdito from "../assets/cerdi.png";
 
-// Datos de ejemplo — reemplaza esto con tus proyectos reales
 const featuredProject = {
-  category: "DISEÑO",
-  title: "10 Tips para Diseñar un Wireframe Profesional",
-  description:
-    "Breve descripción del proyecto destacado, en una o dos líneas que resuman de qué trata.",
+  category: "PROYECTO DESTACADO",
+  title: "DISEÑO DE IDENTIDAD VISUAL PARA CAFÉ LUNA",
+  description: "Creación de marca completa, incluyendo logo, paleta de colores y sitio web para una cafetería artesanal local.",
   link: "#",
+  image: null,
+  image: cerdito,
 };
 
 const projects = [
-  {
-    title: "Proyecto 1",
-    image: null, // pon aquí la ruta de tu imagen cuando la tengas
-  },
-  {
-    title: "Proyecto 2 ",
-    image: null,
-  },
-  {
-    title: "Proyecto 3",
-    image: null,
-  },
-  {
-    title: "Proyecto 4",
-    image: null,
-  },
-  {
-    title: "Proyecto 5",
-    image: null,
-  },
-  {
-    title: "Proyecto 6",
-    image: null,
-  },
-  {
-    title: "Proyecto 7",
-    image: null,
-  },
-  {
-    title: "Proyecto 8",
-    image: null,
-  },
-  {
-    title: "Proyecto 9",
-    image: null,
-  },
+  { title: "Proyecto 1", color: "#dce7f7" },
+  { title: "Proyecto 2", color: "#f8e3ea" },
+  { title: "Proyecto 3", color: "#faf1d7" },
+  { title: "Proyecto 4", color: "#f8ece0" },
+  { title: "Proyecto 5", color: "#e7e5f6" },
+  { title: "Proyecto 6", color: "#fbf1d6" },
+  { title: "Proyecto 7", color: "#f4efe5" },
+  { title: "Proyecto 8", color: "#e5e7f6" },
+  { title: "Proyecto 9", color: "#e9e9e7" },
 ];
 
 export default function Work() {
   return (
     <section className="work" id="work">
-      {/* Tarjeta destacada: fondo oscuro con overlay */}
       <div className="work-featured">
         <div className="work-featured-content">
-          <span className="work-eyebrow">{featuredProject.category}</span>
-          <h2>{featuredProject.title}</h2>
+          <span className="work-eyebrow">
+            {featuredProject.category}
+          </span>
+
+          <h1>{featuredProject.title}</h1>
           <p>{featuredProject.description}</p>
+
           <a href={featuredProject.link} className="work-btn">
             Ver más
+            <svg className="work-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
           </a>
+        </div>
+
+        <div className="work-hero-illustration">
+          <div className="work-hero-podium" />
+          {featuredProject.image ? (
+            <img src={featuredProject.image} alt={featuredProject.title} />
+          ) : (
+            <div className="work-hero-placeholder">Ilustración 3D</div>
+          )}
         </div>
       </div>
 
-      {/* Grid de proyectos */}
       <div className="work-grid">
-        {projects.map((project) => (
-          <div className="work-card" key={project.title}>
-            <div className="work-card-image">
-              {project.image ? (
-                <img src={project.image} alt={project.title} />
-              ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  width="40"
-                  height="40"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <path d="M21 15l-5-5-9 9" />
-                </svg>
-              )}
+        {projects.map(({ title, color }) => (
+          <a href="#" className="work-card" key={title}>
+            <div className="work-card-image" style={{ background: color }} />
+            <div className="work-card-body">
+              <h3>{title}</h3>
+              <span className="work-card-arrow">→</span>
             </div>
-            <h3>{project.title}</h3>
-          </div>
+          </a>
         ))}
       </div>
     </section>

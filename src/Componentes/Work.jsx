@@ -1,4 +1,4 @@
-import "../Styles/Work.css";
+import "../styles/Work.css";
 import cerdito from "../assets/cerdi.png";
 
 const featuredProject = {

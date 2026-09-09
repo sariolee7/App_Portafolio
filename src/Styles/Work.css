@@ -31,7 +31,7 @@
 .work-featured h1 {
   color: var(--dark);
   font: 800 2.75rem/1.15 inherit;
-  line-height: 1.15;
+  line-height: 1.2;
   text-transform: uppercase;
   margin: 0.5rem 0 1.25rem;
 }

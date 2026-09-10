@@ -62,13 +62,23 @@ Después, abre la URL que muestra Vite en la terminal, normalmente `http://local
 
 - [x] Proyecto creado utilizando React + Vite.
 - [x] SPA básica desarrollada con más de dos componentes: `Header`, `Work` y `Footer`.
-- [ ] Repositorio creado en GitHub y proyecto subido.
-- [ ] Repositorio conectado con Vercel.
-- [ ] Aplicación desplegada.
+- [x] Repositorio creado en GitHub y proyecto subido.
+- [x] Repositorio conectado con Vercel.
+- [x] Aplicación desplegada.
 
 ## Enlaces de entrega
 
 Completa estos enlaces después de publicar el proyecto:
 
-- **Repositorio en GitHub:** [Agregar URL del repositorio](https://github.com/)
-- **Aplicación publicada en Vercel:** [Agregar URL de la aplicación](https://vercel.com/)
+- **Repositorio en GitHub:** [Repositorio](https://github.com/sariolee7/App_Portafolio.git)
+- **Aplicación publicada en Vercel:** [URL de la aplicación](https://app-portafolio-brown.vercel.app/)
+
+## Despliegue en Vercel
+
+1. Sube el proyecto a un repositorio de GitHub.
+2. Inicia sesión en [Vercel](https://vercel.com/) y selecciona **Add New Project**.
+3. Importa el repositorio de GitHub.
+4. Mantén la configuración detectada por Vercel para Vite.
+5. Pulsa **Deploy**.
+
+Cada nuevo cambio enviado a la rama configurada podrá generar un nuevo despliegue automáticamente.

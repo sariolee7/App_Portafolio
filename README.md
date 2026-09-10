@@ -72,13 +72,3 @@ Completa estos enlaces después de publicar el proyecto:
 
 - **Repositorio en GitHub:** [Agregar URL del repositorio](https://github.com/)
 - **Aplicación publicada en Vercel:** [Agregar URL de la aplicación](https://vercel.com/)
-
-## Despliegue en Vercel
-
-1. Sube el proyecto a un repositorio de GitHub.
-2. Inicia sesión en [Vercel](https://vercel.com/) y selecciona **Add New Project**.
-3. Importa el repositorio de GitHub.
-4. Mantén la configuración detectada por Vercel para Vite.
-5. Pulsa **Deploy**.
-
-Cada nuevo cambio enviado a la rama configurada podrá generar un nuevo despliegue automáticamente.

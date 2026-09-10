@@ -70,8 +70,8 @@ Después, abre la URL que muestra Vite en la terminal, normalmente `http://local
 
 Completa estos enlaces después de publicar el proyecto:
 
-- **Repositorio en GitHub:** [Agregar URL del repositorio](https://github.com/sariolee7/App_Portafolio.git)
-- **Aplicación publicada en Vercel:** [Agregar URL de la aplicación](https://app-portafolio-brown.vercel.app/)
+- **Repositorio en GitHub:** [Repositorio](https://github.com/sariolee7/App_Portafolio.git)
+- **Aplicación publicada en Vercel:** [URL de la aplicación](https://app-portafolio-brown.vercel.app/)
 
 ## Despliegue en Vercel
 
